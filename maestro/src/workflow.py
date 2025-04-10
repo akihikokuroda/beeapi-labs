@@ -46,14 +46,6 @@ def get_agent_class(framework: str) -> type:
     if os.getenv("DRY_RUN"):
         return MockAgent
     return AgentFactory.create_agent(framework)
-    #if framework == "crewai":
-    #    return CrewAIAgent
-    #elif framework == "remote":
-    #    return RemoteAgent
-    #elif framework == "beeailocal":
-    #    return BeeAILocalAgent
-    #else:
-    #    return BeeAIAgent
 
 def create_agents(agent_defs):
     """

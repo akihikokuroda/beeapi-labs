@@ -47,7 +47,6 @@ class AgentFactory:
             A new instance of the corresponding agent class.
         """
         local = os.getenv("LOCAL_AGENT", False)
-        print(local)
         factories = {
             AgentFramework.BEEAI: BeeAILocalAgent,
             AgentFramework.CREWAI: CrewAIAgent,
