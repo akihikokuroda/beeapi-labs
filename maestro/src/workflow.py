@@ -18,7 +18,7 @@ import os, dotenv
 from src.mermaid import Mermaid
 
 from src.step import Step
-from src.agents.agent_factory import AgentFramework
+from src.agents.agent_factory import AgentFramework, AgentFactory
 
 from src.agents.crewai_agent import CrewAIAgent
 
@@ -45,14 +45,15 @@ def get_agent_class(framework: str) -> type:
     """
     if os.getenv("DRY_RUN"):
         return MockAgent
-    if framework == "crewai":
-        return CrewAIAgent
-    elif framework == "remote":
-        return RemoteAgent
-    elif framework == "beeailocal":
-        return BeeAILocalAgent
-    else:
-        return BeeAIAgent
+    return AgentFactory.create_agent(framework)
+    #if framework == "crewai":
+    #    return CrewAIAgent
+    #elif framework == "remote":
+    #    return RemoteAgent
+    #elif framework == "beeailocal":
+    #    return BeeAILocalAgent
+    #else:
+    #    return BeeAIAgent
 
 def create_agents(agent_defs):
     """
