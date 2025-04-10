@@ -5,8 +5,8 @@ metadata:
   labels:
     app: test-example
 spec:
-  model: meta-llama/llama-3-1-70b-instruct
-  framework: bee
+  model: llama3.1
+  framework: beeai
   description: this is a test
   tools:
     - code_interpreter
@@ -22,8 +22,8 @@ metadata:
   labels:
     app: test-example
 spec:
-  model: meta-llama/llama-3-1-70b-instruct
-  framework: bee
+  model: llama3.1
+  framework: beeai
   description: this is a test
   tools:
     - code_interpreter
@@ -39,8 +39,8 @@ metadata:
   labels:
     app: test-example
 spec:
-  model: meta-llama/llama-3-1-70b-instruct
-  framework: bee
+  model: llama3.1
+  framework: beeai
   description: this is a test
   tools:
     - code_interpreter
@@ -56,8 +56,8 @@ metadata:
   labels:
     app: test-example
 spec:
-  model: meta-llama/llama-3-1-70b-instruct
-  framework: bee
+  model: llama3.1
+  framework: beeai
   description: this is a test
   tools:
     - code_interpreter
@@ -73,8 +73,8 @@ metadata:
   labels:
     app: test-example
 spec:
-  model: meta-llama/llama-3-1-70b-instruct
-  framework: bee
+  model: llama3.1
+  framework: beeai
   description: this is a test
   tools:
     - code_interpreter
