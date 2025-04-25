@@ -2,12 +2,27 @@
 
 ## Supported agents
 
-* Beeai
-* Crewai
-* Remote
-* OpenAI
+The following agents are supported in Maestro
 
-### Agent Definition example
+* BeeAI
+* CrewAI
+* OpenAI
+* Remote
+* Custom
+
+### [BeeAI](https://docs.beeai.dev/introduction/welcome)
+
+#### Configuration
+### [CrewAI](https://www.crewai.com/)
+#### Configuration
+### [OpenAI](https://openai.com/)
+#### Configuration
+### Remote
+#### Configuration
+### Custom
+#### Configuration
+
+## Agent Definition example
 
 * You can define your Agent in a declarative way using a YAML file, where you can use the current BeeAI Agent implementation. With that, you can configure your agent or agents. For example, create an `agents.yaml` file containing the following:
 
