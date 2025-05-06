@@ -88,7 +88,7 @@ type Exception struct {
 }
 
 type Event struct {
-	Corn  string   `json:"corn,omitempty"`
+	Cron  string   `json:"cron,omitempty"`
 	Name  string   `json:"name,omitempty"`
 	Agent string   `json:"agent,omitempty"`
 	Steps []string `json:"steps,omitempty"`

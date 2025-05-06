@@ -47,7 +47,7 @@ spec:
                     properties:
                       agent:
                         type: string
-                      corn:
+                      cron:
                         type: string
                       exit:
                         type: string
