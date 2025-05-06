@@ -60,7 +60,7 @@ type Input struct {
 	Template string `json:"template,omitempty"`
 }
 type Loop struct {
-	Step  string `json:"step,omitempty"`
+	Agent  string `json:"agent,omitempty"`
 	Until string `json:"until,omitempty"`
 }
 type Condition struct {
@@ -71,16 +71,16 @@ type Condition struct {
 	Do      string `json:"do,omitempty"`
 	Default string `json:"default,omitempty"`
 }
-type Parallel struct {
-	Agent string `json:"agent,omitempty"` // ???
-}
+//type Parallel struct {
+//	Agent string `json:"agent,omitempty"` // ???
+//}
 type Step struct {
 	Name      string      `json:"name,omitempty"`
 	Agent     string      `json:"agent,omitempty"`
 	Input     Input       `json:"input,omitempty"`
 	Loop      Loop        `json:"loop,omitempty"`
 	Condition []Condition `json:"condition,omitempty"`
-	Parallel  []Parallel  `json:"parallel,omitempty"`
+	Parallel  []string  `json:"parallel,omitempty"`
 }
 type Exception struct {
 	Name  string `json:"name,omitempty"`

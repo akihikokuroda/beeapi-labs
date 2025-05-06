@@ -73,6 +73,8 @@ spec:
                     type: string
                   steps:
                     items:
+                      description: "type Parallel struct {\n\tAgent string `json:\"agent,omitempty\"`
+                        // ???\n}"
                       properties:
                         agent:
                           type: string
@@ -102,7 +104,7 @@ spec:
                           type: object
                         loop:
                           properties:
-                            step:
+                            agent:
                               type: string
                             until:
                               type: string
@@ -111,10 +113,7 @@ spec:
                           type: string
                         parallel:
                           items:
-                            properties:
-                              agent:
-                                type: string
-                            type: object
+                            type: string
                           type: array
                       type: object
                     type: array
