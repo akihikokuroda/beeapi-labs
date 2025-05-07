@@ -1,4 +1,4 @@
-apiVersion: maestro/v1alpha1
+apiVersion: maestro.i-am-bee.com/v1alpha1
 kind: Agent
 metadata:
   name: slack
@@ -13,10 +13,10 @@ spec:
   instructions: post a message to slack
 
 ---
-apiVersion: maestro/v1alpha1
+apiVersion: maestro.i-am-bee.com/v1alpha1
 kind: Agent
 metadata:
-  name: Paper Finder
+  name: paper-finder
   labels:
     app: mas-example 
 spec:
@@ -87,10 +87,10 @@ spec:
     - 'find_ibm_papers'
 
 ---
-apiVersion: maestro/v1alpha1
+apiVersion: maestro.i-am-bee.com/v1alpha1
 kind: Agent
 metadata:
-  name: get metadata
+  name: get-metadata
   labels:
     app: mas-example 
 spec:
@@ -143,10 +143,10 @@ spec:
     - 'get_metadata_by_title'
 
 ---
-apiVersion: maestro/v1alpha1
+apiVersion: maestro.i-am-bee.com/v1alpha1
 kind: Agent
 metadata:
-  name: generate summary
+  name: generate-summary
   labels:
     app: mas-example 
 spec:
