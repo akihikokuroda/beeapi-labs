@@ -7,8 +7,8 @@ metadata:
 spec:
   template:
     agents:
-      - ActivityPlannerCrew
+      - activityplannercrew
     prompt: Show me some activities to do in London in cold weather
     steps:
       - name: begin
-        agent: ActivityPlannerCrew
+        agent: activityplannercrew

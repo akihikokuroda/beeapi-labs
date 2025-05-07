@@ -7,8 +7,8 @@ metadata:
 spec:
   template:
     agents:
-      - openai_test
+      - openai-test
     prompt: Welcome OpenAI to the AI Agent OSS party
     steps:
       - name: begin
-        agent: openai_test
+        agent: openai-test

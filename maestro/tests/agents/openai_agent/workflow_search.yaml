@@ -7,8 +7,8 @@ metadata:
 spec:
   template:
     agents:
-      - openai_test
+      - openai-test
     prompt: What are the top news headlines in the United Kingdom today
     steps:
       - name: begin
-        agent: openai_test_search
+        agent: openai-test-search

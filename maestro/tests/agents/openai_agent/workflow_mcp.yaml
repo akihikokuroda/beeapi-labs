@@ -7,8 +7,8 @@ metadata:
 spec:
   template:
     agents:
-      - openai_test
+      - openai-test
     prompt: What tools do you have access to?
     steps:
       - name: begin
-        agent: openai_test_mcp
+        agent: openai-test-mcp

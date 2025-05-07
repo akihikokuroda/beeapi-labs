@@ -16,17 +16,17 @@ spec:
         - slack
       exit: "True"
     agents:
-      - Paper Finder
-      - get metadata
-      - generate summary
+      - paper-finder
+      - get-metadata
+      - generate-summary
       - slack
     prompt: find_ibm_papers("stat.ML",30)
     steps:
       - name: Step1
-        agent: Paper Finder
+        agent: paper-finder
       - name: Step2
-        agent: get metadata
+        agent: get-metadata
       - name: Step3
-        agent: generate summary
+        agent: generate-summary
       - name: Step4
         agent: slack

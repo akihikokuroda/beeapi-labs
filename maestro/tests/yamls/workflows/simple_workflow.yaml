@@ -6,11 +6,6 @@ metadata:
     app: example2
 spec:
   template:
-    #metadata:
-    #  name: maestro-deployment
-    #  labels:
-    #    app: example
-    #    use-case: test
     agents:
         - test1
         - test2

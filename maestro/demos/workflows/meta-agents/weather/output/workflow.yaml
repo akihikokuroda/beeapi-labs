@@ -7,11 +7,11 @@ metadata:
 spec:
   template:
     agents:
-      - weather_fetcher
-      - temperature_analyzer
+      - weather-fetcher
+      - temperature-analyzer
     prompt: San Jose
     steps:
       - name: current_weather
-        agent: weather_fetcher
+        agent: weather-fetcher
       - name: compare_temps
-        agent: temperature_analyzer
+        agent: temperature-analyzer
