@@ -1,0 +1,24 @@
+apiVersion: maestro/v1
+kind: Workflow
+metadata:
+  name: read-from-github
+  labels:
+    app: github
+spec:
+  template:
+    metadata:
+      name: read-from-github
+      labels:
+        app: github
+    agents:
+    - read-a-file
+    - put-into-db
+    prompt: Read "README.md" file in org:AI4quantum repo:maestro and save all contents of the file into database
+    steps:
+    - name: read-github
+      agent: read-a-file
+    - name: put-into-db
+      agent: put-into-db
+    - name: list-documents
+      agent: list-documents
+

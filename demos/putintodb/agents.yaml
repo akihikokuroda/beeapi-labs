@@ -1,0 +1,60 @@
+apiVersion: maestro/v1alpha1
+kind: Agent
+metadata:
+  name: read-a-file
+  labels:
+    app: read-a-file
+spec:
+  # model: granite3.3:8b
+  # model: ollama/llama3.1:latest
+  model: llama3.1:latest
+  description: Read a file in a github
+  instructions: You are a helpful agent. You have github access tools.  Read "README.md" file in org:AI4quantum repo:maestro. You may use "get_file_contents" tool to read file.  utput full contents of the file
+  #framework: openai
+  framework: beeai
+  mode: local
+  tools:
+  - remote-github
+
+---
+
+apiVersion: maestro/v1alpha1
+kind: Agent
+metadata:
+  name: put-into-db
+  labels:
+    app: put-into-dbe
+spec:
+  model: granite3.3:8b
+  # model: ollama/llama3.1:latest
+  # model: llama3.1:latest
+  description: Save to DB
+  instructions: |
+    You are a helpful agent.
+    Check if a database named "testDB" exists.  Create "testDB" without embedding if it doesn't exist
+    Save the given text in the TestDB" database.
+  framework: beeai
+  mode: local
+  tools:
+  # - maestro-k
+  - remote-maestro-k
+---
+
+apiVersion: maestro/v1alpha1
+kind: Agent
+metadata:
+  name: list-documents
+  labels:
+    app: list-documents
+spec:
+  model: granite3.3:8b
+  # model: ollama/llama3.1:latest
+  # model: llama3.1:latest
+  description: list documents in a collection
+  instructions: You are a helpful agent.  List names of the documents in "testDB" database.
+  # list_documents_in_collection
+  framework: beeai
+  mode: local
+  tools:
+  # - maestro-k
+  - remote-maestro-k

@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maestro-knowledge-mcp
+spec:
+  selector:
+    matchLabels:
+      app: maestro-knowledge-mcp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: maestro-knowledge-mcp
+    spec:
+      containers:
+      - name: maestro-knowledge-mcp
+        image: ghcr.io/ai4quantum/maestro-knowledge:0.6.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: VECTOR_DB_TYPE
+          value: milvus
+        - name: MILVUS_URI
+          value: "http://my-release-milvus:19530"
+        - name: CUSTOM_EMBEDDING_URL
+          value: "http://host.docker.internal:11434/v1"
+        - name: CUSTOM_EMBEDDING_MODEL
+          value: "nomic-embed-text"
+        - name: CUSTOM_EMBEDDING_VECTORSIZE
+          value: "768"
+        - name: CUSTOM_EMBEDDING_API_KEY
+          value: dummy
+        ports:
+        - name: http
+          containerPort: 8030
+        #readinessProbe:
+        #  httpGet:
+        #    path: /mcp
+        #    port: http
+        #  initialDelaySeconds: 120
+        #  periodSeconds: 20
+        #livenessProbe:
+        #  httpGet:
+        #    path: /mcp
+        #    port: http
+        #  initialDelaySeconds: 120
+        #  periodSeconds: 20
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "512Mi"
+          limits:
+            cpu: "500m"
+            memory: "1Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maestro-knowledge-mcp-service
+  labels:
+    app: maestro-knowledge-mcp
+spec:
+  type: NodePort
+  ports:
+  - name: http
+    nodePort: 30051
+    port: 8030
+    protocol: TCP
+  selector:
+    app: maestro-knowledge-mcp
